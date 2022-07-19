@@ -32,8 +32,8 @@ jobs:
           vs-version: "16.11"
           
       - name: build msvc 2019 16
-        run: bash ./scripts/build.sh
-        
+        run: bash ./scripts/build_win.sh
+
   MacOS:
     runs-on: macos-latest
     steps:
