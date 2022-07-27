@@ -106,3 +106,12 @@ addtest(scale_array_test
 target_link_libraries(scale_array_test
         scale
         )
+
+
+
+addtest(scale_encode_append_test
+        scale_encode_append_test.cpp
+        )
+target_link_libraries(scale_encode_append_test
+        scale_encode_append
+        )
