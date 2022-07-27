@@ -37,7 +37,7 @@ jobs:
 
       - name: show tests dir
         run: |
-          dir \D:\a\scale-codec-cpp\scale-codec-cpp\build\tests_bin\Debug\
+          dir .
 
 
   MacOS:
