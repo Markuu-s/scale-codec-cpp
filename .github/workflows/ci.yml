@@ -37,7 +37,7 @@ jobs:
 
       - name: show tests dir
         run: |
-          dir .
+          dir .\build\tests_bin\Debug
 
 
   MacOS:
