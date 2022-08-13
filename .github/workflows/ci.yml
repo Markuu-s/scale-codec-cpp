@@ -17,6 +17,29 @@ env:
     ~/.hunter
 
 jobs:
+  Windows_MSVC:
+    runs-on: windows-2019
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          path: ${{ env.CACHE_PATHS }}
+          key: ${{ github.job }}-${{ env.CACHE_VERSION }}
+          
+      - name: Add msbuild to PATH
+        uses: microsoft/setup-msbuild@v1.1
+        with:
+          vs-version: "16.11"
+          
+      - name: build msvc 2019 16
+        continue-on-error: true
+        run: bash ./scripts/build_win.sh
+
+      - name: show tests dir
+        run: |
+          dir .\build\tests_bin\Debug
+
+
   MacOS:
     runs-on: macos-latest
     steps:
